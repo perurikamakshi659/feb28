@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+main() {
+    int start, end, num, digit, sum, temp;
+
+    printf("Enter starting range: ");
+    scanf("%d", &start);
+
+    printf("Enter ending range: ");
+    scanf("%d", &end);
+
+    printf("Armstrong numbers between %d and %d are: ", start, end);
+
+    for (num = start; num <= end; num++) {
+        temp = num;
+        sum = 0;
+
+        while (temp != 0) {
+            digit = temp % 10;
+            sum += pow(digit, 3);
+            temp /= 10;
+        }
+
+        if (num == sum) {
+            printf("%d ", num);
+        }
+    }
+
+}
