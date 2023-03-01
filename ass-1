@@ -1,0 +1,27 @@
+
+#include <stdio.h>
+
+ main() {
+    int start, end, i, j, flag, count = 0;
+
+    printf("Enter starting range: ");
+    scanf("%d", &start);
+
+    printf("Enter ending range: ");
+    scanf("%d", &end);
+
+    for (i = start; i <= end; i++) {
+        flag = 0;
+        for (j = 2; j <= i/2; j++) {
+            if (i % j == 0) {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0 && i > 1) {
+            count++;
+        }
+    }
+
+    printf("Number of prime numbers between %d and %d: %d", start, end, count);
+}
